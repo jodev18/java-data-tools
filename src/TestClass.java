@@ -2,6 +2,9 @@ import arrays.ArrayArithmetic;
 import arrays.ArrayHelper;
 import arrays.StringArrayConverter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestClass {
 
     public static void main(String[] args){
@@ -37,7 +40,13 @@ public class TestClass {
     private static void testArrayToString(){
         String[] values = {"Abbb", "Cccc", "Dddd"};
 
-        System.out.println(new ArrayHelper(values).getAsSingleStringDefaultSeparator());
+        List<String> vals = new ArrayList<>();
+
+        vals.add("Eeee");
+        vals.add("Ffff");
+        vals.add("Gggg");
+
+        System.out.println(new ArrayHelper(vals).getAsSingleStringDefaultSeparator());
     }
 
 }
