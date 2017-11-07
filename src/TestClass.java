@@ -1,4 +1,5 @@
 import arrays.ArrayArithmetic;
+import arrays.ArrayHelper;
 import arrays.StringArrayConverter;
 
 public class TestClass {
@@ -29,6 +30,14 @@ public class TestClass {
         System.out.println("Total: " + arrayArithmetic.getTotalSum());
 
         System.out.println("Total double: " + arrayArithmetic.getTotalSumDouble());
+
+        testArrayToString();
+    }
+
+    private static void testArrayToString(){
+        String[] values = {"Abbb", "Cccc", "Dddd"};
+
+        System.out.println(new ArrayHelper(values).getAsSingleStringDefaultSeparator());
     }
 
 }
