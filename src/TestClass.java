@@ -1,3 +1,4 @@
+import algorithms.CodeGenerator;
 import arrays.ArrayArithmetic;
 import arrays.ArrayHelper;
 import arrays.StringArrayConverter;
@@ -35,6 +36,12 @@ public class TestClass {
         System.out.println("Total double: " + arrayArithmetic.getTotalSumDouble());
 
         testArrayToString();
+
+        CodeGenerator c = new CodeGenerator();
+
+        System.out.println("RAND STRING");
+
+        System.out.println(c.getAuthCode());
     }
 
     private static void testArrayToString(){
