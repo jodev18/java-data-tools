@@ -60,7 +60,7 @@ public class TestClass {
     }
 
     private static void testCalculator(){
-        EarthquakeCalculator qc = new EarthquakeCalculator(5.7d,18.0);
+        EarthquakeCalculator qc = new EarthquakeCalculator(8.5d,20.0);
 
         System.out.println(qc.getIntensity());
         System.out.println(qc.getETA());

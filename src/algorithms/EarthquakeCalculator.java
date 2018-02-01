@@ -1,6 +1,5 @@
 package algorithms;
 
-
 /**
  * Created by myxroft on 26/01/2018.
  */
@@ -15,19 +14,11 @@ public class EarthquakeCalculator {
     public static final String INTENSITY_LIGHTLY = "Lightly";
     public static final String INTENSITY_UNAFFECTED = "Unaffected";
 
-    /**
-     * Default constructor
-     * @param magnitude
-     * @param distance
-     */
     public EarthquakeCalculator(Double magnitude, Double distance){
         this.MAGNITUDE = magnitude;
         this.DISTANCE = distance;
     }
 
-    /**
-     * But in case...
-     */
     public EarthquakeCalculator(){
         this.MAGNITUDE = 0d;
         this.DISTANCE = 0d;
@@ -52,12 +43,12 @@ public class EarthquakeCalculator {
     public String getIntensity(){
 
         //Check magnitude
-        if(isInRangeOf(this.MAGNITUDE,6.8d,7.8d)){
+        if(isInRangeOf(this.MAGNITUDE,6.8d,10.0d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,20.0d)){
+            if(isInRangeOf(this.DISTANCE,0.001d,20.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,21.0d,40.0d)){
+            else if(isInRangeOf(this.DISTANCE,21.0d,40.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,41.0d,60.0d)){
@@ -69,10 +60,10 @@ public class EarthquakeCalculator {
         }
         else if(isInRangeOf(this.MAGNITUDE,6.0d,6.7d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,17.0d)){
+            if(isInRangeOf(this.DISTANCE,0.001d,17.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,18.0d,37.0d)){
+            else if(isInRangeOf(this.DISTANCE,18.0d,37.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,38.0d,57.0d)){
@@ -84,10 +75,10 @@ public class EarthquakeCalculator {
         }
         else if(isInRangeOf(this.MAGNITUDE,5.0d,5.9d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,14.0d)){
+            if(isInRangeOf(this.DISTANCE,0.001d,14.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,15.0d,32.0d)){
+            else if(isInRangeOf(this.DISTANCE,15.0d,32.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,33.0d,50.0d)){
@@ -99,10 +90,10 @@ public class EarthquakeCalculator {
         }
         else if(isInRangeOf(this.MAGNITUDE, 4.5d, 4.9d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,10.0d)){
+            if(isInRangeOf(this.DISTANCE,0.001d,10.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,11.0d,18.0d)){
+            else if(isInRangeOf(this.DISTANCE,11.0d,18.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,19.0d,26.0d)){
@@ -114,10 +105,10 @@ public class EarthquakeCalculator {
         }
         else if(isInRangeOf(this.MAGNITUDE, 4.0d, 4.4d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,8.0d)){
+            if(isInRangeOf(this.DISTANCE,0.1d,8.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,9.0d,15.0d)){
+            else if(isInRangeOf(this.DISTANCE,9.0d,15.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,16.0d,21.0d)){
@@ -129,21 +120,21 @@ public class EarthquakeCalculator {
         }
         else if(isInRangeOf(this.MAGNITUDE, 3.7d, 3.9d)){
 
-            if(isInRangeOf(this.DISTANCE,1.0d,5.0d)){
+            if(isInRangeOf(this.DISTANCE,0.1d,5.999d)){
                 return INTENSITY_STRONGLY;
             }
-            else if(isInRangeOf(this.DISTANCE,6.0d,11.0d)){
+            else if(isInRangeOf(this.DISTANCE,6.0d,11.999d)){
                 return INTENSITY_MODERATELY;
             }
             else if(isInRangeOf(this.DISTANCE,12.0d,15.0d)){
-            return INTENSITY_LIGHTLY;
+                return INTENSITY_LIGHTLY;
+            }
+            else{
+                return INTENSITY_UNAFFECTED;
+            }
         }
         else{
             return INTENSITY_UNAFFECTED;
         }
-    }
-        else{
-        return INTENSITY_UNAFFECTED;
-    }
     }
 }
